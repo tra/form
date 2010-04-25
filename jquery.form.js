@@ -90,7 +90,7 @@ $.fn.ajaxSubmit = function(options) {
 			  a.push( { name: n, value: options.data[n][k] } );
 		  }
 		  else
-			 a.push( { name: n, value: options.data[n] } );
+			  a.push( { name: n, value: ($.isFunction(options.data[n]) ? options.data[n]() : options.data[n]) } );
 		}
 	}
 
